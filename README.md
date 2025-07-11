@@ -22,7 +22,7 @@
     git clone https://github.com/KarpovYuri/file-upload-test.git
     ```
 
-2.  **Установите зависимостей**
+2.  **Установите зависимости**
     ```bash
     npm install
     ```
