@@ -1,5 +1,33 @@
-# Vue 3 + TypeScript + Vite
+# File Upload
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Тестовое задание.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+[Демо проекта](https://file-upload.karpov-dev.ru/)
+
+---
+
+## 🚀 Запуск проекта
+
+### **Предварительные требования**
+
+Убедитесь, что у вас установлены:
+
+* [Node.js](https://nodejs.org/) 
+* [npm](https://www.npmjs.com/)
+
+### **Установка**
+
+1.  **Клонируйте репозиторий:**
+    ```bash
+    git clone https://github.com/KarpovYuri/file-upload-test.git
+    ```
+
+2.  **Установите зависимостей**
+    ```bash
+    npm install
+    ```
+
+3.  **После установки всех зависимостей, вы можете запустить проект в режиме разработки.**
+    ```bash
+    npm run dev
+    ```

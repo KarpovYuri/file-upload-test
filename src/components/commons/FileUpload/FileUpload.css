@@ -6,12 +6,14 @@
   gap: 12px;
   font-size: 13px;
   line-height: normal;
+  width: 100%;
 }
 
 .file-upload__wrapper {
   display: flex;
   align-items: center;
   gap: 16px;
+  max-width: 100%;
 }
 
 .file-upload__label {
@@ -34,6 +36,10 @@
   line-height: 16px;
   letter-spacing: -0.006em;
   color: #9ca3b0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
 }
 
 .file-upload__status-text_uploaded {

@@ -40,7 +40,7 @@
       <spinner v-if="isLoading && !isCancelling" />
       <span
         :id="`${inputId}-status`"
-        class="file-upload__status-text"
+        class="file-upload__status-text truncate"
         :class="{ 'file-upload__status-text_uploaded': isUploaded }"
         aria-live="polite"
       >
@@ -71,7 +71,7 @@ import BaseButton from '@/components/UI/BaseButton/BaseButton.vue'
 import Spinner from '@/components/UI/Spinner/Spinner.vue'
 import { nanoid } from 'nanoid'
 
-import { ref, computed } from 'vue'
+import { ref, computed, onUnmounted } from 'vue'
 
 interface FileUploadProps {
   label?: string
@@ -101,7 +101,7 @@ const isCancelling = ref(false)
 const isUploaded = ref(false)
 const error = ref<string | null>(null)
 const UPLOAD_CANCELLED_MESSAGE = 'Загрузка файла отменена.'
-const UPLOAD_DURATION = 1000
+const UPLOAD_DURATION = 1500
 let uploadAbortController: AbortController | null = null
 
 const inputId = computed(() => `file-upload-${nanoid()}`)
@@ -144,6 +144,9 @@ const removeFile = () => {
 
 const openFileWindow = () => {
   if (isLoading.value || isCancelling.value || isUploaded.value) return
+  if (fileInputRef.value) {
+    fileInputRef.value.value = ''
+  }
   fileInputRef.value?.click()
 }
 
@@ -176,7 +179,7 @@ const handleFileChange = async (event: Event) => {
     // Имитация загрузки и ошибки
     await new Promise((resolve, reject) => {
       const timeoutId = setTimeout(() => {
-        if (Math.random() < 0.3) {
+        if (Math.random() < 0.2) {
           reject(new Error('Error message'))
         } else {
           resolve(true)
@@ -205,4 +208,10 @@ const handleFileChange = async (event: Event) => {
     uploadAbortController = null
   }
 }
+
+onUnmounted(() => {
+  if (uploadAbortController) {
+    uploadAbortController.abort()
+  }
+})
 </script>
