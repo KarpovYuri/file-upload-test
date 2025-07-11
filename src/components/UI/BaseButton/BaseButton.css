@@ -1,0 +1,55 @@
+:root {
+  --btn-default-bg: white;
+  --btn-default-border: #e5e7eb;
+  --btn-default-text: #384252;
+  --btn-default-shadow-color: rgba(0, 0, 0, 0.08);
+
+  --btn-hover-bg: #f3f4f6;
+  --btn-hover-border: #d0d5dc;
+
+  --btn-active-bg: #e5e7eb;
+  --btn-active-border: #d0d5dc;
+
+  --btn-disabled-bg: white;
+  --btn-disabled-text: #9ca3b0;
+  --btn-disabled-border: #e5e7eb;
+}
+
+.base-button {
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: var(--btn-default-bg);
+  border: solid 1px var(--btn-default-border);
+  box-shadow: 0 3px 7px -3px var(--btn-default-shadow-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.006em;
+  color: var(--btn-default-text);
+  transition:
+    box-shadow,
+    color,
+    background-color 0.25s ease,
+    border-color 0.2s ease;
+}
+
+.base-button:disabled {
+  cursor: default;
+  color: var(--btn-disabled-text);
+  background-color: var(--btn-disabled-bg);
+  border-color: var(--btn-disabled-border);
+  box-shadow: none;
+}
+
+.base-button:hover:not(:disabled) {
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border);
+  box-shadow: none;
+}
+
+.base-button:active:not(:disabled) {
+  background-color: var(--btn-active-bg);
+  border-color: var(--btn-active-border);
+  box-shadow: none;
+}
