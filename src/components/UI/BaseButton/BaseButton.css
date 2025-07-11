@@ -1,4 +1,4 @@
-:root {
+.base-button {
   --btn-default-bg: white;
   --btn-default-border: #e5e7eb;
   --btn-default-text: #384252;
@@ -13,9 +13,7 @@
   --btn-disabled-bg: white;
   --btn-disabled-text: #9ca3b0;
   --btn-disabled-border: #e5e7eb;
-}
 
-.base-button {
   cursor: pointer;
   padding: 12px;
   border-radius: 12px;
@@ -30,8 +28,8 @@
   transition:
     box-shadow,
     color,
-    background-color 0.25s ease,
-    border-color 0.2s ease;
+    background-color,
+    border-color 0.25s ease;
 }
 
 .base-button:disabled {
